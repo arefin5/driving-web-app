@@ -1,3 +1,5 @@
+const path = require('path');
+
 const nextConfig = {
   images: {
     domains: ["localhost","www.driveshikhun.com", "driveshikhun.com"],
@@ -6,11 +8,11 @@ const nextConfig = {
     baseUrl: "https://backend.driveshikhun.com/api/v1",
   },
   webpack: (config, { dev, isServer }) => {
-    // Enable persistent caching for webpack 5 in production aaaaaaaa
+    // Enable persistent caching for webpack 5 in production
     if (!dev && !isServer) {
       config.cache = {
         type: 'filesystem',
-        cacheDirectory: '.webpack-cache',
+        cacheDirectory: path.resolve(__dirname, '.webpack-cache'), // make it absolute
       };
     }
     return config;
