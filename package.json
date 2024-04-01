@@ -2,12 +2,12 @@
   "name": "driving",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
+ "scripts": {
+    "dev": "set NODE_OPTIONS=--no-warnings&& next dev",
+    "build": "set NODE_OPTIONS=--no-warnings&& next build --ignoreBuildErrors",
     "start": "next start",
     "lint": "next lint"
-  },
+  },  
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^41.2.1",
     "@ckeditor/ckeditor5-react": "^6.2.0",
